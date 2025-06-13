@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Communication & Involvement Activity</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Open Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom Tailwind Color Configuration */
+        :root {
+            --color-dark-purple: #532A8C;
+            --color-medium-purple: #9D8ABB;
+            --color-green-accent: #7ABF49;
+            --color-light-green: #96BF78;
+            --color-light-grey: #F2F2F2;
+            --color-light-purple: #C3ACE8;
+        }
+
+        .bg-dark-purple { background-color: var(--color-dark-purple); }
+        .text-dark-purple { color: var(--color-dark-purple); }
+        .border-dark-purple { border-color: var(--color-dark-purple); }
+
+        .bg-medium-purple { background-color: var(--color-medium-purple); }
+        .text-medium-purple { color: var(--color-medium-purple); }
+
+        .bg-green-accent { background-color: var(--color-green-accent); }
+        .text-green-accent { color: var(--color-green-accent); }
+
+        .bg-light-green { background-color: var(--color-light-green); }
+        .text-light-green { color: var(--color-light-green); }
+
+        .bg-light-grey { background-color: var(--color-light-grey); }
+        .text-light-grey { color: var(--color-light-grey); }
+
+        .bg-light-purple { background-color: var(--color-light-purple); }
+        .text-light-purple { color: var(--color-light-purple); }
+
+        /* General styles */
+        body {
+            font-family: "Open Sans", sans-serif; /* Changed font to Open Sans */
+            background-color: var(--color-light-grey); /* Overall page background */
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Align to top for better content display */
+            min-height: 100vh;
+            padding: 20px; /* Add some padding around the activity */
+            box-sizing: border-box;
+        }
+
+        /* Active tab styling */
+        .tab-button.active {
+            background-color: var(--color-dark-purple);
+            color: var(--color-light-grey);
+            border-bottom: 4px solid var(--color-green-accent);
+        }
+
+        /* Inactive tab styling */
+        .tab-button {
+            background-color: var(--color-medium-purple);
+            color: var(--color-dark-purple);
+            border-bottom: 4px solid transparent; /* To prevent jump when active border appears */
+            transition: all 0.3s ease;
+        }
+
+        .tab-button:hover:not(.active) {
+            background-color: var(--color-light-purple);
+            color: var(--color-dark-purple);
+        }
+
+        /* Hide inactive content */
+        .tab-content {
+            display: none;
+        }
+
+        /* Show active content */
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-6 md:p-8">
+    <div class="activity-container w-full max-w-[1264px] mx-auto bg-white shadow-xl rounded-lg overflow-hidden">
+        <!-- Tab Navigation -->
+        <div class="tab-buttons flex flex-col sm:flex-row justify-center items-stretch border-b-4 border-dark-purple">
+            <button class="tab-button active flex-1 p-4 sm:px-6 sm:py-4 rounded-tl-lg focus:outline-none flex items-center justify-center text-center font-bold text-lg md:text-xl relative overflow-hidden" data-tab="effective-communication">
+                <img src="https://placehold.co/150x150/9D8ABB/F2F2F2?text=Image" onerror="this.onerror=null;this.src='https://placehold.co/150x150/9D8ABB/F2F2F2?text=Placeholder';" alt="Tab Icon" class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-cover rounded-full mr-2 sm:mr-4 flex-shrink-0">
+                <span class="z-10">Effective Communication</span>
+            </button>
+            <button class="tab-button flex-1 p-4 sm:px-6 sm:py-4 focus:outline-none flex items-center justify-center text-center font-bold text-lg md:text-xl relative overflow-hidden" data-tab="risk-communication">
+                <img src="https://placehold.co/150x150/9D8ABB/F2F2F2?text=Image" onerror="this.onerror=null;this.src='https://placehold.co/150x150/9D8ABB/F2F2F2?text=Placeholder';" alt="Tab Icon" class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-cover rounded-full mr-2 sm:mr-4 flex-shrink-0">
+                <span class="z-10">Risk Communication</span>
+            </button>
+            <button class="tab-button flex-1 p-4 sm:px-6 sm:py-4 rounded-tr-lg focus:outline-none flex items-center justify-center text-center font-bold text-lg md:text-xl relative overflow-hidden" data-tab="team-involvement">
+                <img src="https://placehold.co/150x150/9D8ABB/F2F2F2?text=Image" onerror="this.onerror=null;this.src='https://placehold.co/150x150/9D8ABB/F2F2F2?text=Placeholder';" alt="Tab Icon" class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-cover rounded-full mr-2 sm:mr-4 flex-shrink-0">
+                <span class="z-10">Team Involvement</span>
+            </button>
+        </div>
+
+        <!-- Tab Content -->
+        <div class="tab-content-container p-6 sm:p-8 md:p-10 bg-light-grey text-dark-purple">
+            <!-- Content for Effective Communication Tab -->
+            <div id="effective-communication" class="tab-content active rounded-lg">
+                <h2 class="text-2xl sm:text-3xl font-bold mb-4 text-dark-purple">Effective Communication</h2>
+                <p class="mb-4 leading-relaxed">
+                    Internal communication should aim to embed desired safety behaviors by reinforcing positive practices,
+                    recognizing safe actions, and providing constructive feedback for improvement.
+                    Engaging staff in risk management involves encouraging active participation in
+                    hazard identification and risk assessment, soliciting input on safety
+                    procedures, and empowering them to take ownership of safety in their work
+                    areas. Enhancing transparency and accountability requires keeping staff
+                    informed about safety policies, procedures, and performance, clearly defining
+                    roles and responsibilities, and holding individuals accountable for their
+                    safety performance.
+                </p>
+                <h3 class="text-xl sm:text-2xl font-semibold mb-3 text-dark-purple">Examples:</h3>
+                <ul class="list-disc list-inside space-y-2 pl-4 text-dark-purple">
+                    <li>Publicly acknowledging staff who consistently follow infection control protocols.</li>
+                    <li>Holding brainstorming sessions for hazard identification in clinical areas.</li>
+                    <li>Sharing incident reports (with patient confidentiality maintained) and discussing preventative measures.</li>
+                </ul>
+            </div>
+
+            <!-- Content for Risk Communication Tab -->
+            <div id="risk-communication" class="tab-content rounded-lg">
+                <h2 class="text-2xl sm:text-3xl font-bold mb-4 text-dark-purple">Risk Communication</h2>
+                <p class="mb-4 leading-relaxed">
+                    Risk communication is vital for promoting understanding and collaboration.
+                    Discussing hazards and risk control processes involves explaining the rationale behind safety
+                    procedures, using clear language, and providing opportunities for questions.
+                    Clearly communicating the potential consequences of hazards, describing
+                    implemented controls, and explaining their protective function is essential.
+                    Regular updates on safety performance, use of various communication channels,
+                    and timely communication during changes are crucial. Active listening ensures
+                    employees feel heard and receive feedback on their concerns.
+                </p>
+                <h3 class="text-xl sm:text-2xl font-semibold mb-3 text-dark-purple">Examples:</h3>
+                <ul class="list-disc list-inside space-y-2 pl-4 text-dark-purple">
+                    <li>Explaining why specific sterilization procedures are necessary to prevent cross-contamination.</li>
+                    <li>Holding a Q&A session after implementing a new X-ray safety protocol.</li>
+                    <li>Providing regular updates on infection control audit results.</li>
+                    <li>When a staff member reports a slippery floor, ensuring the area is marked off, cleaned, and that the reporting staff member is informed of the actions taken.</li>
+                </ul>
+            </div>
+
+            <!-- Content for Team Involvement Tab -->
+            <div id="team-involvement" class="tab-content rounded-lg">
+                <h2 class="text-2xl sm:text-3xl font-bold mb-4 text-dark-purple">Team Involvement</h2>
+                <p class="mb-4 leading-relaxed">
+                    Team involvement fosters shared responsibility. Monitoring compliance with safety procedures, addressing
+                    deviations promptly, and explaining the rationale behind safety rules are essential.
+                    Creating a culture where staff feel comfortable providing feedback
+                    and actively soliciting input improves safety practices. Providing access to
+                    relevant safety information, clear instructions, accessible manuals, and
+                    documented policies ensures staff are well-informed. Ensuring all staff
+                    understand expectations and know where to seek support completes the framework.
+                    By focusing on these strategies, dental practices can create a
+                    communication-rich environment that empowers staff to take an active role in
+                    maintaining a safe and healthy workplace.
+                </p>
+                <h3 class="text-xl sm:text-2xl font-semibold mb-3 text-dark-purple">Examples:</h3>
+                <ul class="list-disc list-inside space-y-2 pl-4 text-dark-purple">
+                    <li>Conducting regular safety audits and providing feedback to staff.</li>
+                    <li>Holding team meetings to discuss safety concerns and suggestions.</li>
+                    <li>Providing easy access to SDSs and equipment manuals in the staff room.</li>
+                    <li>Clearly outlining the procedure for reporting safety hazards in the employee handbook.</li>
+                    <li>Designating a specific staff member as a safety champion to provide support and guidance.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            // Function to show a specific tab
+            function showTab(tabId) {
+                // Remove 'active' class from all buttons and content
+                tabButtons.forEach(button => button.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+
+                // Add 'active' class to the clicked button and its corresponding content
+                const activeButton = document.querySelector(`.tab-button[data-tab="${tabId}"]`);
+                const activeContent = document.getElementById(tabId);
+
+                if (activeButton) {
+                    activeButton.classList.add('active');
+                }
+                if (activeContent) {
+                    activeContent.classList.add('active');
+                }
+            }
+
+            // Add click event listeners to tab buttons
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const tabId = button.getAttribute('data-tab');
+                    showTab(tabId);
+                });
+            });
+
+            // Initially show the first tab
+            showTab('effective-communication');
+        });
+    </script>
+</body>
+</html>
